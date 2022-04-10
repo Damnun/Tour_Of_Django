@@ -9,15 +9,17 @@
     <body>
         <div>
             <h1>
-                <a href="">Django Damnun Blog</a>
+                <a href="/">Django Damnun Blog</a>
             </h1>
         </div>
 
+    {% for post in posts %}
         <div>
-            <p>published: 10.04.2022, 10:39</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href=""> {{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
+    {% endfor %}
 
         <div>
             <p>published: 10.04.2022, 10:40</p>
